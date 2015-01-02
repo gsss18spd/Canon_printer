@@ -6,8 +6,8 @@ For debian Ubuntu 32bits, printer Canon LBP2900:
 ```
 git clone https://github.com/hugolpz/Canon_printer.git
 cd ./Canon_printer
-make -f download.mk
-make -f install.mk BITS=32 PRINTER=LBP2900
+make -f ./download.mk
+make -f ./install.mk BITS=32 PRINTER=LBP2900
 ```
 
 If printer is not working after install & 1st restart :
