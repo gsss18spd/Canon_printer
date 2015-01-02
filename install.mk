@@ -24,7 +24,7 @@ dep_install: unzip deb_install
 	sudo apt-get install portreserve gsfonts gsfonts-other gsfonts-X11
 
 deb_install: unzip
-	read -p "Computer bits-rate ? (32 or 64)" BITS
+	read -p "Computer bits-rate ? (32 or 64):  " BITS
 	if [ $(BITS) = 32 ] ; then \
 		sudo dpkg -i ./Linux_CAPT_PrinterDriver_V260_uk_EN/32-bit_Driver/Debian/cndrvcups-common_2.60-1_i386.deb ;\
 		sudo dpkg -i ./Linux_CAPT_PrinterDriver_V260_uk_EN/32-bit_Driver/Debian/cndrvcups-capt_2.60-1_i386.deb   ;\
