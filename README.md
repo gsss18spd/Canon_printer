@@ -2,18 +2,31 @@
 ### Canon LBP installer for debian
 
 ```
-git clone ...
+git clone https://github.com/hugolpz/Canon_printer.git
 cd ./Canon_printer
 make -f download.mk
-make -f install.mk
+make -f install.mk BITS=32 PRINTER=LBP2900
 ```
 
-If printer is not working after install & restart :
+If printer is not working after install & 1st restart :
+
+```
+#Add printer:
+sudo /usr/sbin/lpadmin -p LBP2900 -m CNCUPSLBP2900CAPTK.ppd -v ccp://localhost:59787 -E  
+sudo /usr/sbin/ccpdadmin -p LBP2900 -o /dev/usb/lp0
+#Start daemon:
+sudo service ccpd start
+sudo service ccpd status
+#Check status:
+captstatusui -P LBP2900
+```
 
 If, generally speaking, printer is not working after restart:
 
 ```
-make -f OS_restart.mk
+make -f OS_restart.mk   
+# or directly:
+captstatusui -P LBP2900
 ```	
 
 ###
