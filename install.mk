@@ -13,7 +13,7 @@ printer_daemon: add_printer
 	sudo service ccpd status
 
 add_printer: restart_printer
-	sudo /usr/sbin/lpadmin -p $(PRINTER) -m CNCUPS$(PRINTER)CAPTK.ppd -v ccp://localhost:59787 -E  
+	sudo /usr/sbin/lpadmin -p $(PRINTER) -m CNCUPS$(PRINTER)CAPTK.ppd -v ccp:localhost:59787 -E
 	sudo /usr/sbin/ccpdadmin -p $(PRINTER) -o /dev/usb/lp0
 
 # After restart ^ (upper) --------------------------------------------
