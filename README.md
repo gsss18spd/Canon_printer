@@ -1,5 +1,7 @@
+## Canon LBP installer for debian
 
-### Canon LBP installer for debian
+### Install
+For debian Ubuntu 32bits, printer Canon LBP2900:
 
 ```
 git clone https://github.com/hugolpz/Canon_printer.git
@@ -27,14 +29,14 @@ If, generally speaking, printer is not working after restart:
 make -f OS_restart.mk   
 # or directly:
 captstatusui -P LBP2900
-```	
-
-###
+```
+### Notes
 **Result:** This worked for my `LBP2900` on Ubuntu 14.04 in ~2 minutes (out of download time).
 
 **Portability?:** should work for all the LBP series, just set the `BITS` & `PRINTER` arguments.
 
 **Warning:** project is not maintained, but I will accept relevant pull request.
+
 
 ### API
 * `BITS`: default `32`. Your computer is either `32` or `64` bits.
