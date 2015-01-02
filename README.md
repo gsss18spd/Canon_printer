@@ -1,13 +1,13 @@
 ## Canon LBP installer for debian
 
 ### Install
-For debian Ubuntu 32bits, printer Canon LBP2900:
+For debian Ubuntu 64bits, printer Canon LBP2900:
 
 ```
 git clone https://github.com/hugolpz/Canon_printer.git
 cd ./Canon_printer
 make -f ./download.mk
-make -f ./install.mk BITS=32 PRINTER=LBP2900
+sudo make -f ./install.mk BITS=64 PRINTER=LBP2900
 ```
 
 If printer is not working after install & 1st restart :
