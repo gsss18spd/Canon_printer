@@ -13,7 +13,7 @@ register_printer: missing_folders
 
 missing_folders: deb_install
 	sudo mkdir -p /var/ccpd 
-	sudo rm /var/ccpd/fifo0
+	sudo rm -f /var/ccpd/fifo0
 	sudo mkfifo   /var/ccpd/fifo0
 	sudo mkdir -p /var/captmon
 
