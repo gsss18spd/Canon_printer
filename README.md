@@ -13,6 +13,11 @@ sudo make -f ./install.mk BITS=64 PRINTER=LBP2900
 ```
 
 If printer is not working after install & 1st restart :
+```
+sudo /etc/init.d/ccpd start
+```
+
+or
 
 ```
 #Add printer (for LBP2900):
