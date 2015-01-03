@@ -8,27 +8,25 @@ git clone https://github.com/hugolpz/Canon_printer.git
 cd ./Canon_printer
 make -f ./download.mk
 sudo make -f ./install.mk BITS=64 PRINTER=LBP2900
+sudo make -f ./OS_restart
+sudo make -f ./install.mk BITS=64 PRINTER=LBP2900
 ```
 
 If printer is not working after install & 1st restart :
 
 ```
-#Add printer:
+#Add printer (for LBP2900):
 sudo /usr/sbin/lpadmin -p LBP2900 -m CNCUPSLBP2900CAPTK.ppd -v ccp://localhost:59787 -E  
 sudo /usr/sbin/ccpdadmin -p LBP2900 -o /dev/usb/lp0
 #Start daemon:
 sudo service ccpd start
-sudo service ccpd status
-#Check status:
-captstatusui -P LBP2900
 ```
 
-If, generally speaking, printer is not working after restart:
-
+Check out status:
 ```
-make -f OS_restart.mk   
-# or directly:
-captstatusui -P LBP2900
+sudo /etc/init.d/ccpd status  # should show 2 four digits
+captstatusui -P LBP2900       # should show "Ready to print"
+ numbers.
 ```
 ### Notes
 **Result:** This worked for my `LBP2900` on Ubuntu 14.04 in ~2 minutes (out of download time).
