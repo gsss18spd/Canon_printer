@@ -4,6 +4,9 @@
 # Source:
 #http://askubuntu.com/questions/457774/driver-canon-lbp-2900
 
-source:
+restart:
 	echo "On restart:"
-	sudo service ccpd restart
+	sudo pkill -9 -x ccpd
+	sudo pkill -9 -x captmoncnabc
+	sudo /etc/init.d/ccpd start
+	sudo /etc/init.d/ccpd status
