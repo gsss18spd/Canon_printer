@@ -1,10 +1,16 @@
 # RUN ##############################################
-# make -f install_alternative.mk BITS=64 PRINTER=LBP2900
+# sudo make -f install_alternative.mk BITS=64 PRINTER=LBP2900
 
 #http://askubuntu.com/questions/457774/driver-canon-lbp-2900
 
+reset: register_printer
+	sudo pkill -9 -x ccpd
+	sudo pkill -9 -x captmoncnabc
+	sudo /etc/init.d/ccpd start
+	sudo /etc/init.d/ccpd status
 
 register_printer: missing_folders
+	service cups restart
 	sudo /etc/init.d/ccpd start
 	sudo lpadmin -p $(PRINTER) -m CNCUPS$(PRINTER)CAPTK.ppd -v ccp:/var/ccpd/fifo0 -E
 	sudo ccpdadmin -p $(PRINTER) -o /dev/usb/lp0
