@@ -19,7 +19,7 @@ sudo pkill -9 -x ccpd
 sudo /etc/init.d/ccpd start
 ```
 
-( Some sources say to rather do :
+( Some non-tested sources say to rather do :
 
 ```
 #Add printer (for LBP2900):
