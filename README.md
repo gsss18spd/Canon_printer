@@ -12,13 +12,14 @@ sudo make -f ./OS_restart.mk
 sudo make -f ./install.mk BITS=64 PRINTER=LBP2900
 ```
 
-If printer is not working after install & 1st restart :
+### OS restart
+If printer is not working after install & OS restart :
 ```
 sudo pkill -9 -x ccpd
 sudo /etc/init.d/ccpd start
 ```
 
-or
+( Some sources say to rather do :
 
 ```
 #Add printer (for LBP2900):
@@ -27,8 +28,9 @@ sudo /usr/sbin/ccpdadmin -p LBP2900 -o /dev/usb/lp0
 #Start daemon:
 sudo service ccpd start
 ```
+)
 
-Check out status:
+### Check status
 ```
 sudo /etc/init.d/ccpd status  # should show 2 four digits
 captstatusui -P LBP2900       # should show "Ready to print"
