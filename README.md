@@ -8,12 +8,13 @@ git clone https://github.com/hugolpz/Canon_printer.git
 cd ./Canon_printer
 make -f ./download.mk
 sudo make -f ./install.mk BITS=64 PRINTER=LBP2900
-sudo make -f ./OS_restart
+sudo make -f ./OS_restart.mk
 sudo make -f ./install.mk BITS=64 PRINTER=LBP2900
 ```
 
 If printer is not working after install & 1st restart :
 ```
+sudo pkill -9 -x ccpd
 sudo /etc/init.d/ccpd start
 ```
 
