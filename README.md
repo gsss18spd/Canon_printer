@@ -32,9 +32,8 @@ sudo service ccpd start
 
 ### Check status
 ```
-sudo /etc/init.d/ccpd status  # should show 2 four digits
+sudo /etc/init.d/ccpd status  # should show 2 four digits numbers.
 captstatusui -P LBP2900       # should show "Ready to print"
- numbers.
 ```
 ### Notes
 **Result:** This worked for my `LBP2900` on Ubuntu 14.04 in ~2 minutes (out of download time).
