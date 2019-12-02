@@ -6,5 +6,5 @@
 
 source:
 	echo "Download: done"
-	curl -L -C - http://gdlp01.c-wss.com/gds/6/0100004596/03/Linux_CAPT_PrinterDriver_V260_uk_EN.tar.gz -o ./drivers.tar.gz
+	curl -L -C - http://gdlp01.c-wss.com/gds/6/0100004596/05/linux-capt-drv-v271-uken.tar.gz -o ./drivers.tar.gz
 
