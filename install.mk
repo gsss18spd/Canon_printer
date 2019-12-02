@@ -7,7 +7,7 @@ register_printer: missing_folders
 	service cups restart
 	sudo /etc/init.d/ccpd start
 	sudo lpadmin -p $(PRINTER) -m CNCUPS$(PRINTER)CAPTK.ppd -v ccp:/var/ccpd/fifo0 -E
-	sudo ccpdadmin -p $(PRINTER) -o /dev/usb/lp1
+	sudo ccpdadmin -p $(PRINTER) -o /dev/usb/lp0
 	sudo update-rc.d ccpd defaults
 	sudo service ccpd status
 
