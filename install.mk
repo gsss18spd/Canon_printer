@@ -19,13 +19,13 @@ missing_folders: deb_install
 
 deb_install: unzip
 	if [ $(BITS) = 32 ] ; then \
-		sudo dpkg -i ./Linux_CAPT_PrinterDriver_V260_uk_EN/32-bit_Driver/Debian/cndrvcups-common_2.60-1_i386.deb ;\
-		sudo dpkg -i ./Linux_CAPT_PrinterDriver_V260_uk_EN/32-bit_Driver/Debian/cndrvcups-capt_2.60-1_i386.deb   ;\
+		sudo dpkg -i ./linux-capt-drv-v271-uken/64-bit_Driver/Debian/cndrvcups-common_3.21-1_i386.deb ;\
+		sudo dpkg -i ./linux-capt-drv-v271-uken/64-bit_Driver/Debian/cndrvcups-capt_2.71-1_i386.deb   ;\
 	fi;
 	if [ $(BITS) = 64 ] ; then \
 		sudo apt-get install libc6:i386 libpopt0:i386 ;\
-		sudo dpkg -i ./Linux_CAPT_PrinterDriver_V260_uk_EN/64-bit_Driver/Debian/cndrvcups-common_2.60-1_amd64.deb ;\
-		sudo dpkg -i ./Linux_CAPT_PrinterDriver_V260_uk_EN/64-bit_Driver/Debian/cndrvcups-capt_2.60-1_amd64.deb   ;\
+		sudo dpkg -i ./linux-capt-drv-v271-uken/64-bit_Driver/Debian/cndrvcups-common_3.21-1_amd64.deb ;\
+		sudo dpkg -i ./linux-capt-drv-v271-uken/64-bit_Driver/Debian/cndrvcups-capt_2.71-1_amd64.deb   ;\
 	fi;
 #	[[ $(BITS) == 64 ]] { \
 #	sudo dpkg -i ./Linux_CAPT_PrinterDriver_V260_uk_EN/64-bit_Driver/Debian/cndrvcups-common-2.60-1.x86_64.deb ;\ #64bits
